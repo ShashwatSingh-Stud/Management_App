@@ -1,253 +1,393 @@
-<![CDATA[<div align="center">
+<div align="center">
 
-# 🏦 NeoBank — Bank Account Management System
+<img src="assets/banner.png" alt="NeoBank — Bank Account Management System" width="100%" />
 
-### Secure · Simple · Swift
+<br/>
+<br/>
+
+# ⬡ NeoBank
+
+### _**Your Personal Banking Terminal — Reimagined.**_
+
+<br/>
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/ShashwatSingh-Stud/Management_App?style=for-the-badge&logo=github&color=818cf8)](https://github.com/ShashwatSingh-Stud/Management_App)
 
-A lightweight bank account management application with **two interfaces** — a terminal‑based CLI and a sleek, dark‑themed **Streamlit web dashboard**. Create accounts, deposit & withdraw funds, view details, update profiles, and close accounts — all backed by a simple JSON file database.
+<br/>
+
+> 🏦 A sleek, dual‑interface bank account manager — **dark-themed Streamlit dashboard** + **terminal CLI** — with PIN authentication, real-time balance tracking, and zero‑config JSON persistence.
+
+<br/>
+
+[🚀 Quick Start](#-quick-start) · [✨ Features](#-features) · [📖 Usage](#-usage-guide) · [🏗 Architecture](#-architecture) · [🤝 Contributing](#-contributing)
 
 ---
 
 </div>
 
-## 📑 Table of Contents
+<br/>
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the CLI](#running-the-cli)
-  - [Running the Web Dashboard](#running-the-web-dashboard)
-- [Usage Guide](#-usage-guide)
-  - [Create Account](#-create-account)
-  - [Deposit Money](#-deposit-money)
-  - [Withdraw Money](#-withdraw-money)
-  - [View Details](#-view-details)
-  - [Update Profile](#-update-profile)
-  - [Close Account](#-close-account)
-- [Architecture](#-architecture)
-- [Screenshots](#-screenshots)
-- [Contributing](#-contributing)
-- [Author](#-author)
+## 🎯 What is NeoBank?
+
+NeoBank is a **lightweight yet powerful** bank account management system built with Python. It ships with **two interfaces** — pick the one that suits your workflow:
+
+<table>
+<tr>
+<td width="50%" align="center">
+<br/>
+
+**🖥️ Terminal CLI**
+
+<br/>
+
+Classic menu-driven experience.
+Perfect for quick operations
+right from your terminal.
+
+```
+python main.py
+```
+
+<br/>
+</td>
+<td width="50%" align="center">
+<br/>
+
+**🌐 Streamlit Dashboard**
+
+<br/>
+
+Premium dark-themed web UI
+with glassmorphic cards,
+gradient accents & live metrics.
+
+```
+streamlit run app.py
+```
+
+<br/>
+</td>
+</tr>
+</table>
+
+<br/>
 
 ---
+
+<br/>
 
 ## ✨ Features
 
-| Feature | CLI (`main.py`) | Web UI (`app.py`) |
-|---|:---:|:---:|
-| Create Account | ✅ | ✅ |
-| Deposit Money | ✅ | ✅ |
-| Withdraw Money | ✅ | ✅ |
-| View Account Details | ✅ | ✅ |
-| Update Profile (Name / Email / PIN) | ✅ | ✅ |
-| Delete / Close Account | ✅ | ✅ |
-| PIN‑based Authentication | ✅ | ✅ |
-| Auto‑generated Account Numbers | ✅ | ✅ |
-| Age Validation (min 12 years) | ✅ | ✅ |
-| Dashboard Metrics (Total Accounts & Deposits) | — | ✅ |
-| Dark Glassmorphic UI with Gradient Theme | — | ✅ |
+<div align="center">
+
+```
+  ╭──────────────────────────────────────────────────────────────╮
+  │                                                              │
+  │    ⊕  Create Account       with auto-generated account IDs  │
+  │    ↑  Deposit Money         instant balance updates          │
+  │    ↓  Withdraw Money        with overdraft protection        │
+  │    ◈  View Details          full profile & balance card      │
+  │    ✎  Update Profile        change name, email, or PIN       │
+  │    ⊗  Close Account         with confirmation safeguard      │
+  │                                                              │
+  ╰──────────────────────────────────────────────────────────────╯
+```
+
+</div>
+
+<br/>
+
+| Capability | CLI | Web UI |
+|:---|:---:|:---:|
+| Create & manage accounts | ✅ | ✅ |
+| Deposit & withdraw funds | ✅ | ✅ |
+| PIN‑based authentication | ✅ | ✅ |
+| Auto‑generated account numbers | ✅ | ✅ |
+| Age validation (min 12 years) | ✅ | ✅ |
+| Live dashboard metrics | — | ✅ |
+| Dark glassmorphic UI with gradient theme | — | ✅ |
+| Custom typography (Syne + DM Mono) | — | ✅ |
+
+<br/>
 
 ---
+
+<br/>
 
 ## 🛠 Tech Stack
 
-- **Language:** Python 3.8+
-- **Web Framework:** [Streamlit](https://streamlit.io/) — for the interactive dashboard
-- **Data Storage:** JSON file (`database.json`) — zero‑config, file‑based persistence
-- **Fonts:** [Syne](https://fonts.google.com/specimen/Syne) & [DM Mono](https://fonts.google.com/specimen/DM+Mono) (loaded via Google Fonts in the web UI)
+<div align="center">
+
+| Layer | Technology | Purpose |
+|:---|:---|:---|
+| **Language** | ![Python](https://img.shields.io/badge/Python_3.8+-3776AB?style=flat-square&logo=python&logoColor=white) | Core application logic |
+| **Web Framework** | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) | Interactive web dashboard |
+| **Data Store** | ![JSON](https://img.shields.io/badge/JSON-000000?style=flat-square&logo=json&logoColor=white) | Zero‑config file-based persistence |
+| **Fonts** | ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=flat-square&logo=googlefonts&logoColor=white) | Syne & DM Mono |
+
+</div>
+
+<br/>
 
 ---
+
+<br/>
 
 ## 📂 Project Structure
 
 ```
-Management App/
-├── app.py            # Streamlit web dashboard (dark-themed UI)
-├── main.py           # Terminal-based CLI application
-├── database.json     # JSON file storing all user account data
-└── README.md         # Project documentation
+Management_App/
+│
+├── 🎨 app.py              ← Streamlit web dashboard (dark-themed UI)
+│                             Custom CSS, sidebar nav, gradient backgrounds,
+│                             glassmorphic cards, live metric widgets
+│
+├── 💻 main.py             ← Terminal CLI application
+│                             OOP-based Bank class, menu-driven interface,
+│                             all CRUD operations via stdin/stdout
+│
+├── 🗄️ database.json        ← JSON flat-file database
+│                             Array of user records with name, age, email,
+│                             account number, PIN, and balance
+│
+├── 🖼️ assets/              ← Static assets
+│   └── banner.png            README hero banner
+│
+└── 📄 README.md            ← You are here
 ```
 
-| File | Description |
-|---|---|
-| `app.py` | Full‑featured **Streamlit** web application with a premium dark UI, sidebar navigation, custom CSS styling, gradient backgrounds, and real‑time metrics. |
-| `main.py` | Object‑oriented **CLI** version using a `Bank` class with methods for every operation, driven by a simple menu loop. |
-| `database.json` | Flat JSON array storing user records — each record contains `name`, `age`, `email`, `AccountNo.`, `pin`, and `Balance`. |
+<br/>
 
 ---
 
-## 🚀 Getting Started
+<br/>
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Python 3.8** or higher installed on your system
-- **pip** (Python package manager)
+- **Python 3.8+** installed ([download](https://www.python.org/downloads/))
+- **pip** (comes with Python)
 
-### Installation
+### 1️⃣ Clone the Repository
 
-1. **Clone the repository**
+```bash
+git clone https://github.com/ShashwatSingh-Stud/Management_App.git
+cd Management_App
+```
 
-   ```bash
-   git clone https://github.com/<your-username>/Management-App.git
-   cd Management-App
-   ```
+### 2️⃣ Install Dependencies
 
-2. **Install dependencies**
+```bash
+pip install streamlit
+```
 
-   ```bash
-   pip install streamlit
-   ```
+> [!NOTE]
+> The CLI (`main.py`) uses **only the Python standard library** — no extra packages needed.
 
-   > The CLI (`main.py`) uses only the Python standard library — no extra packages needed.
+### 3️⃣ Launch
 
-### Running the CLI
+<table>
+<tr>
+<td>
+
+**Terminal CLI**
 
 ```bash
 python main.py
 ```
 
-You will be presented with a numbered menu:
+</td>
+<td>
 
-```
-press 1 for Creating an account
-press 2 for Depositing money
-press 3 for Withdraw Money
-press 4 for Details of an user
-press 5 for updating users details
-press 6 for deleting user
-press 0 for exit
-```
-
-### Running the Web Dashboard
+**Web Dashboard**
 
 ```bash
 streamlit run app.py
 ```
 
-The app will launch in your default browser at **http://localhost:8501**.
+Opens automatically at **http://localhost:8501**
+
+</td>
+</tr>
+</table>
+
+<br/>
 
 ---
+
+<br/>
 
 ## 📖 Usage Guide
 
-### ⊕ Create Account
+<details>
+<summary><b>⊕ Create Account</b></summary>
+<br/>
 
-Provide your **name**, **age**, **email**, and a **4‑digit PIN** (1000–9999). The system auto‑generates a unique alphanumeric account number. Minimum age requirement is **12 years**.
+Provide your **name**, **age**, **email**, and a **4‑digit PIN** (1000–9999). The system auto‑generates a unique alphanumeric account number.
 
-### ↑ Deposit Money
+> [!IMPORTANT]
+> Minimum age requirement is **12 years**. PINs must be exactly 4 digits.
 
-Authenticate with your **account number** and **PIN**, then enter the amount to deposit. Your updated balance is displayed instantly.
+</details>
 
-### ↓ Withdraw Money
+<details>
+<summary><b>↑ Deposit Money</b></summary>
+<br/>
 
-Authenticate and enter the withdrawal amount. The system checks for **insufficient balance** and prevents overdrafts.
+Authenticate with your **account number** and **PIN**, then enter the deposit amount. Your updated balance is displayed instantly with a gradient highlight in the web UI.
 
-### ◈ View Details
+</details>
 
-Authenticate to view your complete profile — name, email, age, account number, and current balance.
+<details>
+<summary><b>↓ Withdraw Money</b></summary>
+<br/>
 
-### ✎ Update Profile
+Authenticate and enter the withdrawal amount. The system enforces **overdraft protection** — you cannot withdraw more than your available balance.
+
+</details>
+
+<details>
+<summary><b>◈ View Account Details</b></summary>
+<br/>
+
+Authenticate to see your full profile — **name**, **email**, **age**, **account number**, and **current balance** — displayed in a clean card layout on the web UI.
+
+</details>
+
+<details>
+<summary><b>✎ Update Profile</b></summary>
+<br/>
 
 Change your **name**, **email**, or **PIN** after authentication. Leave fields blank to keep existing values unchanged.
 
-### ⊗ Close Account
+</details>
 
-Permanently delete your account after authentication. Requires explicit confirmation. **This action is irreversible.**
+<details>
+<summary><b>⊗ Close Account</b></summary>
+<br/>
+
+Permanently delete your account after authentication. Requires explicit confirmation.
+
+> [!CAUTION]
+> This action is **irreversible**. All data and remaining balance will be permanently deleted.
+
+</details>
+
+<br/>
 
 ---
+
+<br/>
 
 ## 🏗 Architecture
 
 ```
-┌───────────────────────────────────────────────────┐
-│                   User Interface                  │
-│                                                   │
-│   ┌─────────────────┐   ┌──────────────────────┐  │
-│   │   CLI (main.py) │   │  Web UI (app.py)     │  │
-│   │   Terminal Menu  │   │  Streamlit Dashboard │  │
-│   └────────┬────────┘   └──────────┬───────────┘  │
-│            │                       │              │
-│            └───────────┬───────────┘              │
-│                        │                          │
-│              ┌─────────▼─────────┐                │
-│              │   Bank Logic      │                │
-│              │   (Python)        │                │
-│              │                   │                │
-│              │  • Account Gen    │                │
-│              │  • PIN Auth       │                │
-│              │  • CRUD Ops       │                │
-│              └─────────┬─────────┘                │
-│                        │                          │
-│              ┌─────────▼─────────┐                │
-│              │  database.json    │                │
-│              │  (JSON File DB)   │                │
-│              └───────────────────┘                │
-└───────────────────────────────────────────────────┘
+                    ┌─────────────────────────────────────────────┐
+                    │              USER INTERFACES                │
+                    │                                             │
+                    │  ┌──────────────┐   ┌────────────────────┐  │
+                    │  │  CLI         │   │  Web Dashboard     │  │
+                    │  │  main.py     │   │  app.py            │  │
+                    │  │              │   │                    │  │
+                    │  │  • Terminal  │   │  • Streamlit       │  │
+                    │  │  • Menu UI  │   │  • Dark Theme      │  │
+                    │  │  • OOP      │   │  • Glassmorphic    │  │
+                    │  └──────┬───────┘   └─────────┬──────────┘  │
+                    │         │                     │              │
+                    │         └──────────┬──────────┘              │
+                    │                    │                         │
+                    │         ┌──────────▼──────────┐              │
+                    │         │   BUSINESS LOGIC    │              │
+                    │         │                     │              │
+                    │         │  • Account CRUD     │              │
+                    │         │  • PIN Auth         │              │
+                    │         │  • Balance Mgmt     │              │
+                    │         │  • Validation       │              │
+                    │         └──────────┬──────────┘              │
+                    │                    │                         │
+                    │         ┌──────────▼──────────┐              │
+                    │         │   DATA LAYER        │              │
+                    │         │                     │              │
+                    │         │  database.json      │              │
+                    │         │  (JSON flat-file)    │              │
+                    │         └─────────────────────┘              │
+                    └─────────────────────────────────────────────┘
 ```
 
-### Data Model
+### Data Schema
 
-Each user record stored in `database.json` follows this schema:
+Each user record in `database.json`:
 
 ```json
 {
-  "name": "string",
-  "age": 12,
-  "email": "user@example.com",
-  "AccountNo.": "aB3d9Kz2",
-  "pin": 1234,
-  "Balance": 0
+  "name":       "string",       // Full name
+  "age":        18,             // Must be ≥ 12
+  "email":      "user@mail.com",// Email address
+  "AccountNo.": "aB3d9Kz2",    // Auto-generated (8 chars, alphanumeric)
+  "pin":        1234,           // 4-digit PIN (1000–9999)
+  "Balance":    0               // Current balance in ₹
 }
 ```
 
----
-
-## 🖼 Screenshots
-
-> **Web Dashboard** — Launch with `streamlit run app.py`
-
-| Create Account | Deposit Funds | Account Details |
-|:---:|:---:|:---:|
-| Dark‑themed form with auto‑generated account badge | Gradient balance display after successful deposit | Full profile card with balance highlight |
+<br/>
 
 ---
+
+<br/>
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
+Contributions, issues, and feature requests are welcome!
 
-1. **Fork** this repository
-2. **Create** a feature branch — `git checkout -b feature/your-feature`
-3. **Commit** your changes — `git commit -m "Add your feature"`
-4. **Push** to the branch — `git push origin feature/your-feature`
-5. **Open** a Pull Request
+```bash
+# 1. Fork this repo
+# 2. Create your branch
+git checkout -b feature/amazing-feature
 
-### Ideas for Improvement
+# 3. Commit your changes
+git commit -m "feat: add amazing feature"
 
-- [ ] Add transaction history / ledger
-- [ ] Implement password hashing for PINs
-- [ ] Migrate from JSON to SQLite / PostgreSQL
-- [ ] Add fund transfer between accounts
-- [ ] Deploy the Streamlit app to Streamlit Cloud
+# 4. Push and open a PR
+git push origin feature/amazing-feature
+```
+
+### 💡 Ideas for Improvement
+
+- [ ] 📊 Add transaction history / ledger
+- [ ] 🔐 Implement password hashing for PINs
+- [ ] 🗃️ Migrate from JSON to SQLite / PostgreSQL
+- [ ] 💸 Add fund transfer between accounts
+- [ ] ☁️ Deploy to Streamlit Cloud
+- [ ] 📱 Add responsive mobile layout
+
+<br/>
 
 ---
 
-## 👤 Author
-
-**Deepak**
-
----
+<br/>
 
 <div align="center">
 
-Made with ❤️ using Python & Streamlit
+## 👤 Author
+
+**Shashwat Singh**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ShashwatSingh--Stud-181717?style=for-the-badge&logo=github)](https://github.com/ShashwatSingh-Stud)
+
+<br/>
+
+---
+
+<sub>
+
+Built with ❤️ using **Python** & **Streamlit**
+
+⭐ Star this repo if you found it useful!
+
+</sub>
 
 </div>
-]]>
